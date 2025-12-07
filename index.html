@@ -1,0 +1,689 @@
+<!DOCTYPE html> <html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  
+  <title>김현정의 포트폴리오</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="./assets/img/favicon5.jpg" rel="icon">
+  <link href="./assets/img/favicon5.jpg" rel="apple-touch-icon">
+  
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect"> <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin> <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"> 
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Annie+Use+Your+Telescope&family=Lavishly+Yours&family=Rancho&display=swap" rel="stylesheet">
+  
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+  
+  <style>
+    /* 재생 버튼 전체 영역 */
+    .play-button {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 85px;
+      height: 85px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.25); /* 반투명한 흰색 */
+      backdrop-filter: blur(3px); /* 유리 효과 (선택) */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      
+      /* 엠보스 느낌의 그림자 */
+      box-shadow:
+        inset 3px 3px 8px rgba(255, 255, 255, 0.5),
+        inset -3px -3px 8px rgba(0, 0, 0, 0.2),
+        0 4px 12px rgba(0, 0, 0, 0.25);
+        
+        z-index: 10;
+      }
+        /* ▶ 아이콘 스타일 */
+        .play-button i {
+        font-size: 48px;
+        color: #ffffff !important;
+        opacity: 1 !important;
+      }
+      
+      /* 🔥 Glightbox 팝업 재생 버튼 스타일 변경 */
+      .glightbox-container .gvideo .plyr__control--overlaid {
+        background: rgba(255, 255, 255, 0.25) !important; /* 반투명 흰색 */
+        backdrop-filter: blur(3px); /* 유리 느낌 */
+        width: 85px !important;
+        height: 85px !important;
+        border-radius: 50% !important; /* 동그라미 */
+        
+        box-shadow:
+          inset 3px 3px 8px rgba(255, 255, 255, 0.5),
+          inset -3px -3px 8px rgba(0, 0, 0, 0.2),
+          0 4px 12px rgba(0, 0, 0, 0.25) !important;
+        }
+        
+        /* ▶ 안의 삼각형 아이콘 색도 변경 */
+        .glightbox-container .gvideo .plyr__control--overlaid svg {
+          display: block !important;
+          margin: auto !important; /* 중앙 배치 */
+          position: relative !important;
+          top: 0 !important;
+          left: 0 !important;
+          transform: translate(0, 0) !important;
+          width: 42px !important; /* 원하는 크기로 조정 가능 */
+          height: 42px !important;
+          fill: #ffffff !important; /* 아이콘 색 */
+        }
+        
+        /* 1) 재생된 구간: 확실하게 진한 흰색 */
+        .plyr--full-ui .plyr__progress__filled {
+          background: #ffffff !important;
+        }
+        
+        /* 2) 버퍼링 구간: 아주 연하게 */
+        .plyr--full-ui .plyr__progress__buffer {
+          background: rgba(255, 255, 255, 0.15) !important;
+        }
+        
+        /* 3) 재생 전 구간: 거의 안 보이게 */
+        .plyr--full-ui input[type="range"]::-webkit-slider-runnable-track {
+          background: rgba(255, 255, 255, 0.05) !important;
+        }
+
+        .plyr--full-ui input[type="range"]::-moz-range-track {
+          background: rgba(255, 255, 255, 0.05) !important;
+        }
+        
+        .plyr--full-ui input[type="range"]::-ms-track {
+          background: rgba(255, 255, 255, 0.05) !important;
+        }
+        
+        /* ▶ 재생 핸들(동그라미) 흰색 */
+        .plyr--full-ui input[type="range"]::-webkit-slider-thumb,
+        .plyr--full-ui input[type="range"]::-moz-range-thumb,
+        .plyr--full-ui input[type="range"]::-ms-thumb {
+          background: #ffffff !important;
+        }
+        
+        
+          </style>
+          
+          <!-- ======================================================= * Template Name: Lonely * Template URL: https://bootstrapmade.com/free-html-bootstrap-template-lonely/ * Updated: Aug 07 2024 with Bootstrap v5.3.3 * Author: BootstrapMade.com * License: https://bootstrapmade.com/license/ ======================================================== -->
+          
+        </head>
+        
+        <body class="index-page">
+          <header id="header" class="header d-flex align-items-center sticky-top">
+            <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+              
+              <a href="index.html" class="logo d-flex align-items-center">
+                <!-- Uncomment the line below if you also wish to use an image logo -->
+                <img src="./assets/img/hjlogo4.png" alt="">
+              </a>
+              
+              <nav id="navmenu" class="navmenu">
+                <ul>
+                  <li><a href="#hero" class="active">Home</a></li>
+                  <li><a href="#about">About</a></li>
+                  <li><a href="#portfolio">Portfolio</a></li>
+                  <li><a href="#contact">Contact</a></li>
+                </ul>
+                <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+              </nav>
+            </div>
+          </header>
+          
+          <main class="main">
+            
+            
+            <!-- Hero Section -->
+            <section id="hero" class="hero section dark-background">
+              <div class="container text-center" data-aos="fade-up" data-aos-delay="100">
+                <h2>Hello, I'm Hyun Jeong Kim.</h2>
+                <p>I'm learning, growing, and creating every day.<br></p>
+                <a href="#about" class="btn-scroll" title="Scroll Down"><i class="bi bi-chevron-down" style="color: #e5b1b5; font-size: 32px;"></i></a>
+              </div>
+            
+            </section><!-- /Hero Section -->
+            
+            
+            <!-- About Section -->
+            <section id="about" class="about section">
+              
+              <!-- Section Title -->
+               <div class="container section-title" data-aos="fade-up">
+                <h2>About</h2>
+              </div><!-- End Section Title -->
+              
+              <div class="container" data-aos="fade-up" data-aos-delay="100">
+                
+                <div class="row gy-4 justify-content-center">
+                               
+                  <div class="col-lg-8 content">
+                    <div class="row">
+                      <div class="col-12">
+                        <ul>
+                          <li><i class="bi bi-chevron-right"></i>
+                            <strong>Name:</strong> <span>김현정</span></li>
+                          <li><i class="bi bi-chevron-right"></i>
+                            <strong>Birthday:</strong> <span>1990. 4. 4</span></li>
+                          <li><i class="bi bi-chevron-right"></i>
+                            <strong>City:</strong> <span>부산광역시 연제구 연산동</span></li>
+                          <li><i class="bi bi-chevron-right"></i>
+                            <strong>Email:</strong> <span>musicspecial16@naver.com</span></li>
+                          </ul>
+                      </div>
+                    </div>
+                    <p class="py-3 about-description"> <!-- 저는 7년간 (주)이룸비젼에서 유치원 음악특강 강사이자 양산지사장으로 활동하며, <strong>교육·영업·상담·운영 관리</strong>까지 전반적인 업무를 직접 수행했습니다. <br> 이 과정에서 <strong><span class="underline">고객과의 소통, 니즈 파악, 설득력 있는 제안, 일정/인력 관리 등</span></strong> 마케팅의 기반이 되는 핵심 역량을 자연스럽게 익혔습니다. <br><br> 이후 새로운 분야에 도전하기 위해 교육 사업을 정리하고 해운대 이노의원에서 2년간 근무하며 여러 마케팅 대행사와 협업하는 경험을 쌓았습니다. <br> 현장에서 다양한 <strong>광고 전략·콘텐츠 구성·브랜드 이미지 관리 과정</strong>을 보며 제가 가장 흥미를 느끼는 분야가 ‘마케팅’이라는 것을 확신하게 되었습니다. <br><br> 이 후 원츠 마케팅 회사에서 약 3개월간 실무를 경험하며 콘텐츠 기획, SNS 운영, 병원·브랜드 마케팅 프로세스, 고객 커뮤니케이션 등을 경험했고 정확한 데이터 기반의 전략 수립과 고객 심리를 이해하는 일에 큰 매력을 느꼈습니다. <br><br> 또한, 마케팅 업무에 더 전문성을 갖추기 위해 <strong>센텀 직업전문학교</strong>에서 포토샵, 피그마, 일러스트, 영상제작, 웹 코딩을 4개월 반 동안 배우며 <strong>광고 콘텐츠 제작부터 웹페이지 구성까지 마케팅 전반에 필요한 도구</strong>들을 익혔습니다. <br><br> --> 저는 교육·병원·마케팅 업계에서 쌓은 실전 경험과 직접 배우며 성장해 온 마케팅 역량을 바탕으로 <br><strong>“고객을 이해하고, 브랜드 가치를 설득력 있게 전달하는 마케터”</strong>를 목표로 하고 있습니다. </p>
+                  </div>
+
+                  <div class="col-lg-4">
+                    <div class="profile-img-wrap">
+                      <img src="./assets/img/hjphoto.jpg" class="img-fluid profile-img" alt="">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              </section><!-- /About Section -->
+              
+              <!-- Skills Section -->
+              <section id="skills" class="skills section">
+                
+                <!-- Section Title -->
+                <div class="container section-title" data-aos="fade-up">
+                  <h2>Skills</h2>
+                  <!-- <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p> -->
+                </div><!-- End Section Title -->
+                
+                <div class="container" data-aos="fade-up" data-aos-delay="100">
+                  <div class="row skills-content skills-animation">
+                    <div class="col-lg-6">
+                      
+                      <div class="progress">
+                        <span class="skill"><span>HTML</span> <i class="val">80%</i></span>
+                        <div class="progress-bar-wrap">
+                          <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                      </div><!-- End Skills Item -->
+                      
+                      <div class="progress">
+                        <span class="skill"><span>CSS</span> <i class="val">80%</i></span>
+                        <div class="progress-bar-wrap">
+                          <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                      </div><!-- End Skills Item -->
+                      
+                      <div class="progress">
+                        <span class="skill"><span>JavaScript</span> <i class="val">75%</i></span>
+                        <div class="progress-bar-wrap"> <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div> </div> </div><!-- End Skills Item -->
+                      </div>
+                      
+                      <div class="col-lg-6">
+                        <div class="progress">
+                          <span class="skill"><span>Illustrator</span> <i class="val">90%</i></span>
+                          <div class="progress-bar-wrap">
+                            <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                          </div>
+                        </div><!-- End Skills Item -->
+                        
+                        <div class="progress">
+                          <span class="skill"><span>Premiere Pro & After Effect</span> <i class="val">95%</i></span>
+                          <div class="progress-bar-wrap">
+                            <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+                          </div>
+                        </div><!-- End Skills Item -->
+                        
+                        <div class="progress">
+                          <span class="skill"><span>Photoshop</span> <i class="val">90%</i></span>
+                          <div class="progress-bar-wrap">
+                            <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                          </div>
+                        </div><!-- End Skills Item -->
+                      </div>
+                    </div>
+                  </div>
+                
+                </section><!-- /Skills Section -->
+                
+                
+                <!-- Resume Section -->
+                <section id="resume" class="resume section light-background">
+                  
+                  <!-- Section Title -->
+                  <div class="container section-title" data-aos="fade-up">
+                    <h2>Resume</h2>
+                    <!-- <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p> -->
+                  </div><!-- End Section Title -->
+                  
+                  
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                        
+                        <h3 class="resume-title">Certificate</h3>
+                        <div class="resume-item"> <h4>피부미용사 국가자격증</h4>
+                          <h5>2023.2</h5>
+                          <!-- <p><em>디자인·영상·웹 과정</em></p>
+                          <p>Photoshop, Illustrator, Figma, Premiere Pro, After Effects, HTML, CSS, JavaScript, 마케팅 포트폴리오 제작 프로젝트</p> -->
+                        </div>
+
+                        <div class="resume-item"> <h4>멀티미디어 콘텐츠 제작전문가 자격증</h4>
+                          <h5>2025.10(필기합격)</h5>
+                          <!-- <p><em>디자인·영상·웹 과정</em></p>
+                          <p>Photoshop, Illustrator, Figma, Premiere Pro, After Effects, HTML, CSS, JavaScript, 마케팅 포트폴리오 제작 프로젝트</p> -->
+                        </div>
+
+                        <div class="resume-item"> <h4>그래픽 기능사 자격증</h4>
+                          <h5>2025.11(필기합격)</h5>
+                          <!-- <p><em>디자인·영상·웹 과정</em></p>
+                          <p>Photoshop, Illustrator, Figma, Premiere Pro, After Effects, HTML, CSS, JavaScript, 마케팅 포트폴리오 제작 프로젝트</p> -->
+                        </div>
+
+                        
+                        <h3 class="resume-title">Education</h3>
+                        <div class="resume-item"> <h4>부산여자고등학교</h4>
+                          <h5>2016 -2019</h5>
+                          <!-- <p><em>디자인·영상·웹 과정</em></p>
+                          <p>Photoshop, Illustrator, Figma, Premiere Pro, After Effects, HTML, CSS, JavaScript, 마케팅 포트폴리오 제작 프로젝트</p> -->
+                        </div>
+
+                        <div class="resume-item">
+                          <h4>방송통신대학교</h4>
+                          <h5>2024 - 현재</h5>
+                          <p><em>법학과, 미디어영상학과</em></p>
+                          <!-- <p>Photoshop, Illustrator, Figma, Premiere Pro, After Effects, HTML, CSS, JavaScript, 마케팅 포트폴리오 제작 프로젝트</p> -->
+                        </div>
+                        
+                        <div class="resume-item">
+                          <h4>센텀 직업전문학교</h4>
+                          <h5>2025.7 - 2025.11</h5>
+                          <p><em>디자인·영상·웹 과정</em></p>
+                          <p>Photoshop, Illustrator, Figma, Premiere Pro, After Effects, HTML, CSS, JavaScript, 마케팅 포트폴리오 제작 프로젝트</p>
+                        </div>
+                      </div>
+                      
+                      <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+                        <h3 class="resume-title">Work Experience</h3>
+                        <div class="resume-item">
+                          <h4>(주)이룸비젼</h4>
+                          <h5>2016.3 - 2023.2</h5>
+                          <p><em>양산지사장 & 음악특강 강사 </em></p>
+                          <ul>
+                            <li>교육프로그램 기획 및 운영</li>
+                            <li>유치원/어린이집 등의 기관 담당, 영업·상담·고객관리 수행</li>
+                            <li>홍보 안내문, 교육 프로그램 콘텐츠 등 기획</li>
+                            <li>강사 관리 및 일정, 교육 품질 관리</li>
+                          </ul>
+                        </div><!-- Edn Resume Item -->
+                        
+                        <div class="resume-item">
+                          <h4>이노의원</h4>
+                          <h5>2023.3-2025.2</h5>
+                          <p><em>관리 팀장</em></p>
+                          <ul>
+                            <li>관리 팀장</li>
+                            <li>환자 니즈 기반 상담 및 리텐션 관리</li>
+                            <li>병원 마케팅 대행사들과 협업하며 광고 전략·콘텐츠 구성 이해</li>
+                            <li>간단한 디자인 및 홍보 자료 제작 보조</li>
+                          </ul>
+                        </div><!-- Edn Resume Item -->
+                        
+                        <div class="resume-item">
+                          <h4>원츠 마케팅</h4>
+                          <h5>2025.4-2025.6</h5>
+                          <p><em>마케팅 실무</em></p>
+                          <ul>
+                            <li>블로그 작성</li>
+                            <li>카드뉴스 제작 등 콘텐츠 제작 보조</li>
+                            <li>브랜드 마케팅 프로젝트 서포트</li>
+                          </ul>
+                        </div><!-- Edn Resume Item -->                      
+                      </div>
+                    </div>
+                  </div>
+                </section><!-- /Resume Section -->
+                
+                
+                <!-- Portfolio Section -->
+                <section id="portfolio" class="portfolio section light-background">
+                  
+                  <!-- Section Title -->
+                  <div class="container section-title" data-aos="fade-up">
+                    <h2>Portfolio</h2>
+                    <p>이 포트폴리오는 마케팅 분야에 도전하기 위한 저의 경험과 작업물을 정리한 공간입니다. </p>
+                  </div><!-- End Section Title -->
+                  
+                  <div class="container">
+                    
+                    <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
+                      <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
+                        <li data-filter="*" class="filter-active filter-all">All</li>
+                        <li data-filter=".filter-app">Video</li>
+                        <li data-filter=".filter-product">Design</li>
+                        <li data-filter=".filter-branding">Figma</li>
+                      </ul><!-- End Portfolio Filters -->
+                      <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
+                        
+                        <!-- Video 1 -->
+                      <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+                        <div class="video-thumbnail-wrap" style="position:relative; cursor:pointer; border-radius:16px; overflow:hidden;">
+                            
+                          <!-- 썸네일 이미지 -->
+                          <img src="./assets/img/masonry-portfolio/video/1-6_썸네일.PNG" class="img-fluid" alt="Video Thumbnail">
+                             
+                          <!-- 재생 버튼 -->
+                          <div class="play-button">
+                            <i class="bi bi-play-fill"></i>
+                          </div>
+                          
+                          <!-- 영상 링크 -->
+                          <a href="https://drive.google.com/file/d/1KF9HrvFHOlumVdhF_0-WB5vzz1CtfWZz/preview" class="glightbox video-lightbox" data-gallery="gallery-video" data-type="video" style="position:absolute; top:0; left:0; width:100%; height:100%; "></a>
+                        </div>
+                        <div class="portfolio-info">
+                          <h4>Video 1</h4>
+                          <p>이노의원 홍보영상</p>
+                        </div>
+                      </div>
+                      
+                      <!-- Product 1 -->
+                      <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
+                        <a href="product1-detail.html" target="_blank">
+                          <img src="./assets/img/masonry-portfolio/leaflet/Frame7.png" class="img-fluid" alt="부산여행 리플릿">
+                        </a>
+                        <div class="portfolio-info">
+                          <h4>Product 1</h4>
+                          <p>부산여행 리플릿</p>
+                          <a href="product1-detail.html" class="details-link" title="More Details">
+                            <i class="bi bi-link-45deg"></i>
+                          </a>
+                        </div>
+                      </div>
+                      
+                      <!-- Branding 1 -->
+                      <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
+                      <a href="branding1-detail.html" target="_blank">
+                        <img src="./assets/img/masonry-portfolio/figma-thumb.jpg" class="img-fluid" alt="반응형 웹페이지">
+                      </a>
+                        <div class="portfolio-info">
+                          <h4>Branding 1</h4>
+                          <p>반응형 웹페이지</p>
+                          <a href="branding1-detail.html" class="details-link" title="More Details">
+                            <i class="bi bi-link-45deg"></i>
+                          </a>
+                        </div>
+                      </div>
+                      
+                      <!-- Video 2 -->
+                      <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+                      <div class="video-thumbnail-wrap" style="position:relative; cursor:pointer; border-radius:16px; overflow:hidden;">
+                          
+                        <!-- 썸네일 이미지 -->
+                        <img src="./assets/img/masonry-portfolio/video/1-5_썸네일.PNG" class="img-fluid" alt="Video Thumbnail">
+                        
+                        <!-- 재생 버튼 -->
+                        <div class="play-button">
+                          <i class="bi bi-play-fill"></i>
+                        </div>
+                        
+                        <!-- 영상 링크 -->
+                        <a href="https://drive.google.com/file/d/1TAfjfvUedVcFkcrwPxPKdLYeBnIpr1-a/preview" class="glightbox video-lightbox" data-gallery="gallery-video" data-type="video" style="position:absolute; top:0; left:0; width:100%; height:100%;">                          
+                        </a>
+                      </div>
+                      
+                      <div class="portfolio-info">
+                        <h4>Video 2</h4>
+                        <p>슬라이드쇼 제작 영상 </p>
+                      </div>
+                    </div>
+                    
+                    <!-- Product 2 -->
+                    <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
+                      <a href="product2-detail.html" target="_blank">
+                        <img src="./assets/img/masonry-portfolio/poster/frame1.png" class="img-fluid" alt="헌혈 포스터">
+                      </a>
+                      
+                      <div class="portfolio-info">
+                        <h4>Product 2</h4>
+                        <p>헌혈 포스터</p>
+                        <a href="product2-detail.html" class="details-link" title="More Details"> <i class="bi bi-link-45deg"></i>
+                        </a>
+                      </div>
+                    </div>
+                    
+                    <!-- Video 3 -->
+                    <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+                      <div class="video-thumbnail-wrap" style="position:relative; cursor:pointer; border-radius:16px; overflow:hidden;">
+                        
+                        <!-- 썸네일 이미지 -->
+                        <img src="./assets/img/masonry-portfolio/video/1-4_썸네일.png" class="img-fluid" alt="Video Thumbnail">
+                        
+                        <!-- 재생 버튼 -->
+                        <div class="play-button">
+                          <i class="bi bi-play-fill"></i>
+                        </div>
+                        
+                        <!-- 영상 링크 -->
+                        <a href="https://drive.google.com/file/d/1Tib-wOK62DEeYZxZIQo0ogNEcKl6LX3T/preview" class="glightbox video-lightbox" data-gallery="gallery-video" data-type="video" style="position:absolute; top:0; left:0; width:100%; height:100%;"></a>
+                      </div>
+                      
+                      <div class="portfolio-info">
+                        <h4>Video 3</h4>
+                        <p>제품(닥터에스떼 앰플)광고 영상</p>
+                      </div>
+                    </div>
+                    
+                    <!-- Product 3 -->
+                    <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
+                      <a href="product3-detail.html" target="_blank">
+                        <img src="./assets/img/masonry-portfolio/logo/Frame3.png" class="img-fluid" alt="logo">
+                      </a>
+                      
+                      <div class="portfolio-info">
+                        <h4>Product 3</h4>
+                        <p>Home Cafe Factory 로고</p>
+                        <a href="product3-detail.html" class="details-link" title="More Details">
+                          <i class="bi bi-link-45deg"></i>
+                        </a>
+                      </div>
+                    </div>
+                    
+                    <!-- Video 4 -->
+                    <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+                      <div class="video-thumbnail-wrap" style="position:relative; cursor:pointer; border-radius:16px; overflow:hidden;">
+                        
+                        <!-- 썸네일 이미지 -->
+                        <img src="./assets/img/masonry-portfolio/video/1-3_썸네일.PNG" class="img-fluid" alt="Video Thumbnail">
+                        
+                        <!-- 재생 버튼 -->
+                        <div class="play-button">
+                          <i class="bi bi-play-fill"></i>
+                        </div>
+                        
+                        <!-- 영상 링크 -->
+                        <a href="https://drive.google.com/file/d/1-1dHxZmtkA872BbnQ8w_bv75oZAriumE/preview" class="glightbox video-lightbox" data-gallery="gallery-video" data-type="video" style="position:absolute; top:0; left:0; width:100%; height:100%;">                          
+                        </a>
+                      </div>
+                      <div class="portfolio-info">
+                        <h4>Video 4</h4>
+                        <p>나만의 핫플레이스</p>
+                      </div>
+                    </div>
+                    
+                    <!-- Product 4 -->
+                    <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product"> <a href="product4-detail.html" target="_blank"> <img src="./assets/img/masonry-portfolio/character/Untitled-1.jpg" class="img-fluid" alt="logo">
+                    </a>
+                    
+                    <div class="portfolio-info">
+                      <h4>Product 4</h4>
+                      <p>나만의 캐릭터</p>
+                      <a href="product4-detail.html" class="details-link" title="More Details">
+                        <i class="bi bi-link-45deg"></i>
+                      </a>
+                    </div>
+                  </div>
+                  
+                  <!-- Video 5 -->
+                  <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+                    <div class="video-thumbnail-wrap" style="position:relative; cursor:pointer; border-radius:16px; overflow:hidden;">
+                      
+                      <!-- 썸네일 이미지 -->
+                      <img src="./assets/img/masonry-portfolio/video/1-2_썸네일.PNG" class="img-fluid" alt="Video Thumbnail">
+                      
+                      <!-- 재생 버튼 -->
+                      <div class="play-button">
+                        <i class="bi bi-play-fill"></i>
+                      </div>
+                      
+                      <!-- 영상 링크 -->
+                       
+                      <a href="https://drive.google.com/file/d/1kRodvNIEDzA8kYZ5lOP81hRa_LwR5UN-/preview" class="glightbox video-lightbox" data-gallery="gallery-video" data-type="video" style="position:absolute; top:0; left:0; width:100%; height:100%;">
+                      </a>
+                    </div>
+                    
+                    <div class="portfolio-info">
+                      <h4>Video 5</h4>
+                      <p>센텀직업전문학교 홍보영상</p>
+                    </div>
+                  </div>
+
+                  <!-- Video 6 -->
+                  <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+                    <div class="video-thumbnail-wrap" style="position:relative; cursor:pointer; border-radius:16px; overflow:hidden;">
+                      
+                      <!-- 썸네일 이미지 -->
+                      <img src="./assets/img/masonry-portfolio/video/1-1_썸네일.PNG" class="img-fluid" alt="Video Thumbnail">
+                      
+                      <!-- 재생 버튼 -->
+                      <div class="play-button">
+                        <i class="bi bi-play-fill"></i>
+                      </div>
+                      
+                      <!-- 영상 링크 -->
+                       
+                      <a href="https://drive.google.com/file/d/16KiwvHvzH00Tcs9zKpUI9cvFq8AFoJ0o/preview" class="glightbox video-lightbox" data-gallery="gallery-video" data-type="video" style="position:absolute; top:0; left:0; width:100%; height:100%;">
+                      </a>
+                    </div>
+                    
+                    <div class="portfolio-info">
+                      <h4>Video 5</h4>
+                      <p>센텀직업전문학교 홍보영상</p>
+                    </div>
+                  </div>
+                </div><!-- End Portfolio Container -->
+              </div>
+            </div>
+          </section>
+          
+          <!-- Contact Section -->
+          <section id="contact" class="contact section">
+            
+            <!-- Section Title -->
+            <div class="container section-title" data-aos="fade-up">
+              <h2>Contact</h2>
+            </div><!-- End Section Title -->
+            
+            <div class="container" data-aos="fade-up" data-aos-delay="100">
+              
+              <!-- ✅ 여기부터 contact-card 박스 -->
+              <div class="contact-card">
+                <div class="row gy-4 justify-content-center text-center contact-info-row">
+                  
+                  <!-- Address -->
+                  <div class="col-lg-4 col-md-4 col-12"> <div class="info-item">
+                    <i class="bi bi-geo-alt"></i>
+                    <div>
+                      <h3>Address</h3>
+                      <p>부산광역시 연제구 연산동</p>
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- Call Us -->
+                <div class="col-lg-4 col-md-4 col-12">
+                  <div class="info-item">
+                    <i class="bi bi-telephone"></i>
+                    <div> <h3>Call</h3> <p>010-****-0898</p>
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- Email Us -->
+                <div class="col-lg-4 col-md-4 col-12">
+                  <div class="info-item">
+                    <i class="bi bi-envelope"></i>
+                    <div>
+                      <h3>E-mail</h3>
+                      <p>musicspecial16@naver.com</p>
+                    </div>
+                  </div>
+                </div>
+              </div><!-- /.row -->
+            </div><!-- /.contact-card -->
+          </div><!-- /.container -->
+          <!-- /Contact Section -->
+
+          </main>
+          
+          <footer id="footer" class="footer light-background">
+            <div class="container">
+              <!-- <div class="footer-logo">
+                <img src="./assets/img/HJ_LOGO2.png" alt="Footer Logo">
+              </div>
+              <h3 class="sitename annie-use-your-telescope-regular">Hyun JeonG</h3> -->
+              <div class="footer-brand d-flex justify-content-center align-items-center">
+                <img src="./assets/img/hjlogo4.png" alt="Footer Logo" class="footer-logo-img">
+                <h3 class="sitename annie-use-your-telescope-regular footer-name">Hyun JeonG</h3>
+              </div>
+              <!-- <div class="social-links d-flex justify-content-center">
+                <a href=""><i class="bi bi-twitter-x"></i></a>
+                <a href=""><i class="bi bi-facebook"></i></a>
+                <a href=""><i class="bi bi-instagram"></i></a>
+                <a href=""><i class="bi bi-skype"></i></a>
+                <a href=""><i class="bi bi-linkedin"></i></a>
+              </div> -->
+              <div class="container">
+                <div class="copyright">
+                  <span>Copyright</span> <strong class="px-1 sitename">Hyun JeonG</strong> <span>All Rights Reserved</span> </div>
+                <div class="credits">
+                    <!-- All the links in the footer should remain intact. -->
+                    <!-- You can delete the links only if you've purchased the pro version. -->
+                    <!-- Licensing information: https://bootstrapmade.com/license/ -->
+                    <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+                    Designed by <a href="#">HyunJeong Kim</a>
+                </div>
+              </div>
+            </div>
+          </footer>
+              
+          <!-- Scroll Top -->
+          <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i>
+          </a>
+          
+          <!-- Preloader -->
+          <div id="preloader"></div>
+          
+          <!-- Vendor JS Files -->
+          <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+          <script src="assets/vendor/php-email-form/validate.js"></script>
+          <script src="assets/vendor/aos/aos.js"></script>
+          <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+          <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+          <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+          <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+          <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+          
+          <!-- Main JS File -->
+          <script src="assets/js/main.js"></script>
+        </body>
+        </html>
